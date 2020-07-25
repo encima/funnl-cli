@@ -1,0 +1,20 @@
+funnls:
+  reddit: 
+    auth: 
+      client_id: 
+      client_secret: 
+      username: 
+      pwd: 
+  web_history:
+    browsers:
+      safari: 
+        path: $HOME/Library/Safari/History.db
+        statement: SELECT url, title, datetime(visit_time + 978307200, 'unixepoch', 'localtime') FROM history_visits INNER JOIN history_items ON history_items.id = history_visits.history_item ORDER BY visit_time DESC
+      vivaldi: 
+        path: $HOME/Library/Application Support/Vivaldi/Default/History.sqlite
+        statement: SELECT url, title, datetime((last_visit_time/1000000)-11644473600, 'unixepoch', 'localtime') AS last_visit_time FROM urls ORDER BY last_visit_time DESC
+  letterboxd:
+    exported: 
+      watchlist: $HOME/Documents/data/letterboxd/watchlist.csv
+      watched: $HOME/Documents/data/letterboxd/watched.csv
+      reviews: $HOME/Documents/data/letterboxd/reviews.csv 

@@ -1,0 +1,4 @@
+Funnl:
+- Catch when config vars don't exist
+- Global streaming from sqlite DBs
+- Separate envs (prod uses Postgres)
